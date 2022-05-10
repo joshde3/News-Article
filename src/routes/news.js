@@ -22,29 +22,6 @@ newsRouter.get('', async(req, res) => {
     } 
 })
 
-// newsRouter.get('/:id', async(req, res) => {
-//     let articleID = req.params.id
-
-//     try {
-//         const newsAPI = await axios.get(`http://newsapi.org/v2/everything?q=bitcoin&from=2022-04-05&sortBy=publishedAt&apiKey=29f33115b9334dcfb2d8772b71132fd3/${articleID}`)
-//         res.render('newsSingle', { article : newsAPI.data })
-//     } catch (err) {
-//         if(err.response) {
-//             res.render('newsSingle', { article : null })
-//             console.log(err.response.data)
-//             console.log(err.response.status)
-//             console.log(err.response.headers)
-//         } else if(err.requiest) {
-//             res.render('newsSingle', { article : null })
-//             console.log(err.requiest)
-//         } else {
-//             res.render('newsSingle', { article : null })
-//             console.error('Error', err.message)
-//         }
-//     } 
-// })
-
-
 newsRouter.post('', async(req, res) => {
     let search = req.body.search
     try {
