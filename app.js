@@ -11,13 +11,13 @@ app.use('/img', express.static(__dirname + 'public/img'))
 app.use('/js', express.static(__dirname + 'public/js'))
 
 // Templating Engine
-app.set('views', './src/views')
+app.set('views', './views')
 app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({ extended : true }))
 
 // Routes
-const newsRouter = require('./src/routes/news')
+const newsRouter = require('./routes/news')
 
 app.use('/', newsRouter)
 app.use('/article', newsRouter)
